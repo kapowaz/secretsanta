@@ -99,11 +99,12 @@ class SecretSanta
     
     self.pairings.each do |pairing|
       Pony.mail({
-        :to => "#{pairing[:from]} <#{pairing[:email]}>", 
-        :from => "Secret Santa <noreply@santas-workshop.northpole>", 
-        :subject => "[#{self.code}] Secret Santa", 
-        :html_body => "<h1>Secret Santa!</h1><p>Festive greetings, #{pairing[:from]}!</p><p>This email is just to let you know that in the random draw, you have been selected to buy a Secret Santa gift for #{pairing[:to]}!</p><p>Season's greetings,<br>Santa</p><p><small>P.S. Please keep hold of this email just in case. The code in the subject line can be used to help re-send the list if need be.</small></p>",
-        :via => :sendmail
+        :to           => "#{pairing[:from]} <#{pairing[:email]}>", 
+        :from         => "Secret Santa <secret@san.ta>",
+        :subject      => "[#{self.code}] Secret Santa", 
+        :html_body    => "<h1>Secret Santa!</h1><p>Festive greetings, #{pairing[:from]}!</p><p>This email is to let you know that in the random draw, you have been selected to buy a Secret Santa gift for #{pairing[:to]}!</p><p>Season's greetings,<br>Santa</p><p><small>P.S. Please keep hold of this email just in case. The code in the subject line can be used to help re-send the list if need be.</small></p>",
+        :via          => :smtp,
+        :via_options  => YAML.load(File.new('./smtp.yml'))
       })
       print "•".green
       STDOUT.flush
