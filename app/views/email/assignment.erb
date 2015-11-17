@@ -1,0 +1,6 @@
+<h1>Secret Santa</h1>
+
+<p>Festive greetings, <%= locals[:participant].name %>!</p>
+<p>This email is to let you know that in the random draw, you have been selected to buy a Secret Santa gift for <strong><%= locals[:participant].assignee.name %></strong>!</p>
+<p>Ho ho ho!<br>Love, Santa</p>
+<p><small>P.S. Please keep hold of this email just in case you forget who you got. Your assignment code is <pre><%= locals[:participant].code %></pre></small></p>

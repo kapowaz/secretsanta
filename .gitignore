@@ -1,3 +1,6 @@
-participants.yml
-smtp.yml
-participant_pairings.db
+.DS_Store
+db/*
+config/database.yml
+config/participants.yml
+config/smtp.yml
+config/test.yml
