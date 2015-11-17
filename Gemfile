@@ -1,6 +1,10 @@
 source 'http://rubygems.org'
+ruby '2.2.3'
 
-gem "colored"
-gem "data_mapper", "~> 1.2.0"
-gem "dm-sqlite-adapter"
-gem "pony"
+gem 'tilt'
+gem 'rake'
+gem 'colored'
+gem 'data_mapper',       '~> 1.2.0'
+gem 'dm-sqlite-adapter'
+gem 'pony'
+gem 'pry'
